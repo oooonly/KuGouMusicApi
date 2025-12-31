@@ -4,11 +4,8 @@ module.exports = (params, useAxios) => {
     url: params.targetUrl,
     baseURL: '',
     method: 'GET',
-    encryptType: 'android',
-    responseType: 'stream', 
-    headers: { 'x-router': 'trackercdn.kugou.com' },
-    encryptKey: true,
-    notSign: true,
-    cookie: params?.cookie || {},
+    responseType: 'arraybuffer', 
+    clearDefaultParams: true,
+    notSignature: true,
   });
 };
