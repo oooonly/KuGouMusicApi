@@ -1,4 +1,5 @@
 module.exports = (params, useAxios) => {
+  console.log(JSON.stringify(params))
   return useAxios({
     url: params.targetUrl,
     method: 'GET',
