@@ -60,7 +60,7 @@ async function getModulesDefinitions(modulesPath, specificRoute, doRequire = tru
  * @param {ModuleDefinition[]} moduleDefs
  * @return {Promise<import('express').Express>}
  */
-exports.consturctServer = async function consturctServer(moduleDefs) {
+async function consturctServer(moduleDefs) {
   const app = express();
   const { CORS_ALLOW_ORIGIN } = process.env;
   app.set('trust proxy', true);
