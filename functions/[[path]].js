@@ -1,5 +1,12 @@
 const { consturctServer } = require("../server.js");
 const { httpServerHandler } = require("cloudflare:node");
 
-const app = await consturctServer() 
-export const onRequest = httpServerHandler(app);
+let handler;
+
+export async function onRequest(context) {
+  if (!handler) {
+    const app = await consturctServer();
+    handler = httpServerHandler(app);
+  }
+  return handler(context);
+}
